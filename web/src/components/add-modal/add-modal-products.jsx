@@ -22,11 +22,6 @@ const AddModalProducts = ({onClose}) => {
 	const [unitaryCost, setUnitaryCost] = useState("");
 	const [providerID, setProviderID] = useState(1);
 
-	if (!product || !provider || !unit || !quantity || !unitaryCost) {
-		toast.error("Todos los campos son obligatorios");
-		return;
-	}
-
 	const handleSave = () => {
 		const newProduct = {
 			NombreProducto: product,
