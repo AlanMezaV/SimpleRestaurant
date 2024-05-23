@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import CustomSelect from "../custom-select/custom-select";
+import {Toaster, toast} from "sonner";
 import {BASE_URL} from "../../utilities/petitionConst.js";
 
 const AddModalProducts = ({onClose}) => {
@@ -20,6 +21,11 @@ const AddModalProducts = ({onClose}) => {
 	const [quantity, setQuantity] = useState("");
 	const [unitaryCost, setUnitaryCost] = useState("");
 	const [providerID, setProviderID] = useState(1);
+
+	if (!product.trim() || !quantity.trim() || !unitaryCost.trim()) {
+		toast.error("Todos los campos son obligatorios");
+		return;
+	}
 
 	const handleSave = () => {
 		const newProduct = {
