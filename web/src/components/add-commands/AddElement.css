@@ -1,10 +1,9 @@
-
 .modal-container-large {
-    position: absolute;
+	position: absolute;
 	font-weight: 500;
 	color: var(--dim-gray);
 	width: 1200px;
-	height: auto;
+	height: 95%;
 	background-color: var(--white);
 	padding: 20px 20px 30px 20px;
 	border: 1px solid var(--smoke-white);
@@ -13,149 +12,148 @@
 }
 
 .number-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 12px;
-    padding: 12px;
-    width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 12px;
+	padding: 12px;
+	width: 100%;
 }
-  
+
 .input-number-container {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    width: 80%;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    font-size: 1.3rem;
-    padding: 4px;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	width: 95%;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	font-size: 1.3rem;
+	padding: 4px;
 }
 
 .input-number-container input {
-    pointer-events: none;
-    width: 100%;
-    border: none;
-    outline: none;
-    font-size: 1.3rem;
-    text-align: center;
-    padding: 12px;
+	pointer-events: none;
+	width: 100%;
+	border: none;
+	outline: none;
+	font-size: 1.3rem;
+	text-align: center;
+	padding: 12px;
 }
 
 .erase-btn {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
 }
 
 .erase-btn:hover {
-    color: var(--DarkerSlateGray);
+	color: var(--DarkerSlateGray);
 }
 
 .numeric-keypad {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    gap: 8px;
-    width: 95%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	align-items: center;
+	gap: 8px;
+	width: 95%;
 }
 
 .numeric-keypad button {
-    padding: 20px;
-    font-size: 1.8rem;
-    width: 95%;
-    font-weight: bold;
-    background-color: white;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
+	padding: 20px;
+	font-size: 1.8rem;
+	width: 95%;
+	font-weight: bold;
+	background-color: white;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 .numeric-keypad button:hover {
-    background-color: #dadadb;
+	background-color: #dadadb;
 }
 
 .numeric-keypad button.btn-next {
-    width: 98%;
-    grid-column:  span 2;
-    transition: color 0.3s;
-    transition: background-color 0.3s;
+	width: 98%;
+	grid-column: span 2;
+	transition: color 0.3s;
+	transition: background-color 0.3s;
 }
 
 .numeric-keypad button.btn-next:hover {
-    background-color: var(--LogoColor);
-    color: white;
-    
+	background-color: var(--LogoColor);
+	color: white;
 }
 
 .div1 {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    height: 65;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	height: 65;
 }
 
 /* --------------------  Create Commands Styles -------------------- */
 .main-create-command {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap : 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
 }
 
 .command-header {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    background-color: #F0F1F3;
-    place-items: center;
-    text-align: center;
-    color: var(--DarkerSlateGray);
-    border-radius: 5px;
-    font-size: 0.7rem;
-    padding: 8px;
-    margin-top: 8px;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	background-color: #f0f1f3;
+	place-items: center;
+	text-align: center;
+	color: var(--DarkerSlateGray);
+	border-radius: 5px;
+	font-size: 0.7rem;
+	padding: 8px;
+	margin-top: 8px;
 }
 
 .command-header p {
-    width: 100px;
+	width: 100px;
 }
 
 .command-option {
-    background-color: white;
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid gray;
-    width: 80px;
-    height: 80px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+	background-color: white;
+	display: flex;
+	gap: 8px;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	border: 1px solid gray;
+	width: 80px;
+	height: 80px;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.3s;
 }
 
 .command-option:hover {
-    background-color: #dadadb;
+	background-color: #dadadb;
 }
 
 .command-option img {
-    position: relative;
-    top: 0;
-    width: 100%;
-    height: auto;
+	position: relative;
+	top: 0;
+	width: 100%;
+	height: auto;
 }
 
 .al-center {
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 .value-command {
-    font-size: 25px;
-    font-weight: bold;
+	font-size: 25px;
+	font-weight: bold;
 }
 
 .mt-4 {
-    margin-top: 8px;
+	margin-top: 8px;
 }

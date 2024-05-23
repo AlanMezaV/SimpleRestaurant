@@ -1,14 +1,10 @@
 import React, {useState} from "react";
 import CustomSelect from "../custom-select/custom-select";
+import {Toaster, toast} from "sonner";
 import {BASE_URL} from "../../utilities/petitionConst.js";
 
 const AddModalDishes = ({onClose}) => {
-	const [clave, setClave] = useState("");
-	const [dish, setDish] = useState("");
-	const [group, setGroup] = useState("");
-	const [price, setPrice] = useState("");
-
-	const statusOptions = [
+	const groupOptions = [
 		{value: "1", label: "Entradas"},
 		{value: "2", label: "Platos principales"},
 		{value: "3", label: "Postres"},
@@ -17,7 +13,22 @@ const AddModalDishes = ({onClose}) => {
 		{value: "6", label: "Otros"},
 	];
 
+	const [clave, setClave] = useState("");
+	const [dish, setDish] = useState("");
+	const [group, setGroup] = useState(groupOptions[0].label);
+	const [price, setPrice] = useState("");
+
 	const handleSave = () => {
+		if (!dish || !price || !group) {
+			toast.error("Por favor, llena todos los campos");
+			return;
+		}
+
+		if (isNaN(price)) {
+			toast.error("El precio debe ser un número");
+			return;
+		}
+
 		const newDish = {
 			NombrePlatillo: dish,
 			Precio: price,
@@ -74,10 +85,7 @@ const AddModalDishes = ({onClose}) => {
 					</div>
 					<div className="modal-custom-input">
 						<span>Grupo</span>
-						<CustomSelect
-							options={statusOptions}
-							onOptionChange={selectGroup}
-						/>
+						<CustomSelect options={groupOptions} onOptionChange={selectGroup} />
 					</div>
 				</div>
 				<div className="form-custom-button-container">
@@ -86,6 +94,7 @@ const AddModalDishes = ({onClose}) => {
 					</button>
 				</div>
 			</div>
+			<Toaster richColors closeButton />
 		</div>
 	);
 };

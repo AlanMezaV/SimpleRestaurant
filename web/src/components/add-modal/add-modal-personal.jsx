@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import CustomSelect from "../custom-select/custom-select";
+import {Toaster, toast} from "sonner";
 import {BASE_URL} from "../../utilities/petitionConst.js";
 
 const AddModalPersonal = ({onClose}) => {
@@ -24,6 +25,45 @@ const AddModalPersonal = ({onClose}) => {
 	];
 
 	const addEmployee = () => {
+		if (
+			!name ||
+			!lastName ||
+			!nss ||
+			!rfc ||
+			!phone ||
+			!address ||
+			!email ||
+			!salary
+		) {
+			toast.error("Por favor, llena todos los campos");
+			return;
+		}
+
+		if (nss.length !== 11) {
+			toast.error("El NSS debe tener 11 caracteres");
+			return;
+		}
+
+		if (rfc.length !== 13) {
+			toast.error("El RFC debe tener 13 caracteres");
+			return;
+		}
+
+		if (isNaN(phone)) {
+			toast.error("El teléfono debe ser un número");
+			return;
+		}
+
+		if (phone.length !== 10) {
+			toast.error("El teléfono debe tener 10 dígitos");
+			return;
+		}
+
+		if (isNaN(salary)) {
+			toast.error("El salario debe ser un número");
+			return;
+		}
+
 		const currentDate = new Date().toISOString().slice(0, 10);
 		const newEmployee = {
 			NombreEmp: name,
@@ -43,12 +83,12 @@ const AddModalPersonal = ({onClose}) => {
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify(newEmployee), // Cambiado de newDish a newEmployee
+			body: JSON.stringify(newEmployee),
 		})
 			.then((response) => response.json())
 			.then((data) => {
 				console.log("Nuevo empleado creado:", data);
-				onClose(); // Cerrar el modal después de guardar exitosamente
+				onClose();
 			})
 			.catch((error) => {
 				console.error("Error al guardar el empleado:", error);
@@ -170,6 +210,7 @@ const AddModalPersonal = ({onClose}) => {
 					</button>
 				</div>
 			</div>
+			<Toaster richColors closeButton />
 		</div>
 	);
 };

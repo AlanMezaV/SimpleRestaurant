@@ -23,6 +23,16 @@ const AddModalProducts = ({onClose}) => {
 	const [providerID, setProviderID] = useState(1);
 
 	const handleSave = () => {
+		if (!product || !quantity || !unitaryCost) {
+			toast.error("Por favor, llena todos los campos");
+			return;
+		}
+
+		if (isNaN(quantity) || isNaN(unitaryCost)) {
+			toast.error("Cantidad y Costo unitario deben ser números");
+			return;
+		}
+
 		const newProduct = {
 			NombreProducto: product,
 			IDProveedor: providerID,
@@ -114,7 +124,7 @@ const AddModalProducts = ({onClose}) => {
 					</button>
 				</div>
 			</div>
-			<Toaster />
+			<Toaster richColors closeButton />
 		</div>
 	);
 };
