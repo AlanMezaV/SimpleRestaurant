@@ -119,6 +119,7 @@ const AddModalProducts = ({onClose}) => {
 					</button>
 				</div>
 			</div>
+			<Toaster />
 		</div>
 	);
 };
