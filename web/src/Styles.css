@@ -1,0 +1,27 @@
+:root {
+	--LightSlateGray: #6f8cae;
+	--SlateGray: #587697;
+	--DarkSlateBlue: #416180;
+	--DarkSlateGray: #294b69;
+	--DarkerSlateGray: #123552;
+	--MidnightBlue: #0a1e2f;
+	--LogoColor: #1a355c;
+	--buttonBlue: #22345e;
+	--white: #ffffff;
+	--white-smoke: #f5f5f5;
+	--light-grey: #f7f8fa;
+	--Dim-grey: #505470;
+	--Background: #f8f8f7;
+	--light-gray: #e4e6ee;
+	--light-steel-blue: #aeb4cf;
+    --light-steel: #5B5F7B;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: "Inter", sans-serif;
+}
